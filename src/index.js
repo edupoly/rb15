@@ -15,8 +15,11 @@ import Aboutus from './Aboutus';
 import Contactus from './Contactus';
 import Courses from './Courses';
 import CourseDetails from './CourseDetails';
+import Products from './Products';
+import ProductDetails from './ProductDetails';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <React.StrictMode>
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
@@ -26,9 +29,13 @@ root.render(
         <Route path='courses' element={<Courses/>} >
           <Route path='coursedetails/:coursename' element={<CourseDetails/>} />
         </Route>
+        <Route path='products' element={<Products></Products>}>
+          <Route path="productdetails" element={<ProductDetails></ProductDetails>}/>
+        </Route>
       </Route>
     </Routes>
   </BrowserRouter>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

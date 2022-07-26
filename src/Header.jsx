@@ -17,6 +17,9 @@ function Header(){
                     <li class="nav-item">
                         <Link class="nav-link" to="/courses">Courses</Link>
                     </li>
+                    <li class="nav-item">
+                        <Link class="nav-link" to="/products">Products</Link>
+                    </li>
                 </ul>
             </div>
         </nav>
