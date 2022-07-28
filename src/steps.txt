@@ -1,0 +1,27 @@
+create a store folder before
+
+1.create a reducer
+    1. create initialstate
+    2. reducer function
+        pass initialstate to reducer
+    3. export reducer
+2. create another reducer is you want
+    1.follow the same steps of first reducer
+3. create main reducer file
+    1. import combineReducers function
+    2. import all the reducers 
+    3. combine reducers using combineReducers functions
+3. create a store 
+    1. import createStore function
+    2. import combined reducer
+    3. create a store using createStore by passing reducer as argument
+    4. export store
+4. goto app component
+    1. import store from store
+    2. import Provider from react-redux
+    3. bind store to app using Provider component
+5. goto the respective component
+    1. use connect method to bind the store to component
+
+
+store === state+dispatch+actions
