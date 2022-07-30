@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import {v4 as uuidv4} from 'uuid'
+import {v4 as uuidv4} from 'uuid';
+import {addTodo,toggleTodoStatus,deleteTodo} from './store/actions'
 function Todolist(props) {
     const [task, settask] = React.useState({title:'',status:false,id:uuidv4()})
     const [filteredtodos, setfilteredtodos] = React.useState([]);
@@ -34,7 +35,7 @@ function Todolist(props) {
         <div className='betterview'>
             <h1>Todolist({filteredtodos && filteredtodos.length})</h1>
             <input type='text' onChange={handleTask} />
-            <button onClick={()=>{props.dispatch({type:'ADDTODO',payload:task})}}>Add Task</button>
+            <button onClick={()=>{props.dispatch(addTodo(task))}}>Add Task</button>
             <br></br>
             <br></br>
             <br></br>
@@ -55,9 +56,9 @@ function Todolist(props) {
                     filteredtodos && filteredtodos.map(task=>{
                         return (<li className={task.status?'completed':'notcompleted'}>
                             {task.title}
-                            {(task.status===false) && <button onClick={()=>{props.dispatch({type:'TOGGLE_TODO_STATUS',payload:task})}}>Done</button>}
-                            {(task.status===true) && <button onClick={()=>{props.dispatch({type:'TOGGLE_TODO_STATUS',payload:task})}}>Undo</button>}
-                            <button onClick={()=>{props.dispatch({type:'DELETETODO',payload:task})}}>Delete</button>
+                            {(task.status===false) && <button onClick={()=>{props.dispatch(toggleTodoStatus(task))}}>Done</button>}
+                            {(task.status===true) && <button onClick={()=>{props.dispatch(toggleTodoStatus(task))}}>Undo</button>}
+                            <button onClick={()=>{props.dispatch(deleteTodo(task))}}>Delete</button>
                             </li>)
                     })
                 }
