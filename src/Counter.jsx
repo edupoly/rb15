@@ -1,14 +1,25 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import {increment,decrement,reset} from './store/actions'
 function Counter(props) {
     console.log(props)
-  return (
-    <div className="betterview">
-        <h1>Counter:{props.counter.count}</h1>
-        <button onClick={()=>{props.dispatch({type:'INC'})}}>Increment</button>
-        <button onClick={()=>{props.dispatch({type:'DEC'})}}>Decrement</button>
-        <button onClick={()=>{props.dispatch({type:'RESET'})}}>Reset</button>
-    </div>
-  )
+    return (
+      <div className="betterview">
+          <h1>Counter:{props.count}</h1>
+          <button onClick={props.inc}>Increment</button>
+          <button onClick={props.decrementing}>Decrement</button>
+          <button onClick={props.reset}>Reset</button>
+      </div>
+    )
 }
-export default connect(function(store){return store})(Counter)
+function mapStateToProps(state){
+  return state.counter
+}
+function mapDispatchToProps(dispatch){
+  return {
+    inc:()=>{dispatch(increment())},
+    decrementing:()=>{dispatch(decrement())},
+    reset:()=>{dispatch(reset())},
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Counter)
