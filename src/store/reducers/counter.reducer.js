@@ -13,4 +13,7 @@ function counterReducer(state=initialState,action){
     }
     return {...state}
 }   
+export function selectCount(state){
+    return state.counter
+}
 export default counterReducer;

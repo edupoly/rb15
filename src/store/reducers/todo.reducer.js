@@ -60,4 +60,7 @@ function todoReducer(state=initialState,action) {
     }
     return {...state}
 }
+export function selectTodos(state){
+    return state.todo
+}
 export default todoReducer
