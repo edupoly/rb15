@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 function Counter(props) {
-    console.log(props)
+    console.log("counter:",props)
   return (
     <div className="betterview">
         <h1>Counter:{props.counter.count}</h1>

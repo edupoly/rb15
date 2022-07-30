@@ -1,5 +1,5 @@
 const initialState = {
-    count:0
+    count:10
 }
 function counterReducer(state=initialState,action){
     if(action.type==='INC'){

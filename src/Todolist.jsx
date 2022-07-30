@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {v4 as uuidv4} from 'uuid';
 import {addTodo,toggleTodoStatus,deleteTodo} from './store/actions'
 function Todolist(props) {
+    console.log("todos",props)
     const [task, settask] = React.useState({title:'',status:false,id:uuidv4()})
     const [filteredtodos, setfilteredtodos] = React.useState([]);
     const [filterKey, setfilterKey] = React.useState('completed')
