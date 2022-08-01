@@ -13,6 +13,7 @@ function Counter(props) {
     )
 }
 function mapStateToProps(state){
+  console.log("state::",state)
   return state.counter
 }
 function mapDispatchToProps(dispatch){
