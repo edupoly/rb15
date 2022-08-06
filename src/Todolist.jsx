@@ -53,8 +53,8 @@ function Todolist(props) {
             <ul>
                 {
                     //console.log(filteredtodos)
-                    filteredtodos && filteredtodos.map(task=>{
-                        return (<li className={task.status?'completed':'notcompleted'}>
+                    filteredtodos && filteredtodos.map((task,i)=>{
+                        return (<li key={i} className={task.status?'completed':'notcompleted'}>
                             {task.title}
                             {(task.status===false) && <button onClick={()=>{props.dispatch(toggleTodoStatus(task))}}>Done</button>}
                             {(task.status===true) && <button onClick={()=>{props.dispatch(toggleTodoStatus(task))}}>Undo</button>}

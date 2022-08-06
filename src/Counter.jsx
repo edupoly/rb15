@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 import {increment,decrement,reset} from './store/actions'
 function Counter(props) {
-    console.log(props)
+    console.log("counter",props)
     return (
       <div className="betterview">
           <h1>Counter:{props.count}</h1>
@@ -13,7 +13,6 @@ function Counter(props) {
     )
 }
 function mapStateToProps(state){
-  console.log("state::",state)
   return state.counter
 }
 function mapDispatchToProps(dispatch){
