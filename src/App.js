@@ -1,18 +1,18 @@
-import logo from './logo.svg';
+import React from 'react'
+import store from './app/store';
+
+import { Provider } from 'react-redux';
 import './App.css';
-import Header from './Header'
-import Footer from './Footer';
-import { Outlet } from 'react-router-dom';
+import Counter from './features/counter/Counter';
 
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-      <div className='betterview'>
-        <Outlet></Outlet>
+    <Provider store={store}>
+      <div className="App">
+        <h1>HI</h1>
+        <Counter></Counter>
       </div>
-      <Footer></Footer>
-    </div>
+    </Provider>
   );
 }
 
